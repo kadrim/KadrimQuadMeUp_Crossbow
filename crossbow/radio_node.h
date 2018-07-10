@@ -1,7 +1,12 @@
 #pragma once
 
+/*
 #define RADIO_FREQUENCY_MIN 868000000
 #define RADIO_FREQUENCY_MAX 870000000
+*/
+#define RADIO_FREQUENCY_MIN 433000000
+#define RADIO_FREQUENCY_MAX 435000000
+
 #define RADIO_FREQUENCY_RANGE (RADIO_FREQUENCY_MAX-RADIO_FREQUENCY_MIN)
 #define RADIO_CHANNEL_WIDTH 250000
 #define RADIO_CHANNEL_COUNT 9 // 9 channels in 2MHz range (RADIO_FREQUENCY_RANGE/RADIO_CHANNEL_WIDTH) + 1
@@ -33,9 +38,9 @@ class RadioNode {
         void handleTxDoneState(bool hop);
         void handleTx(QspConfiguration_t *qsp, uint8_t bindKey[]);
         void set(
-            uint8_t power, 
-            long bandwidth, 
-            uint8_t spreadingFactor, 
+            uint8_t power,
+            long bandwidth,
+            uint8_t spreadingFactor,
             uint8_t codingRate,
             long frequency
         );

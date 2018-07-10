@@ -23,7 +23,7 @@ void PlatformNode::seed(void) {
         #ifdef ARDUINO_SAMD_FEATHER_M0
         EEPROM.commit();
         #endif
-    } 
+    }
 }
 
 void PlatformNode::loadBindKey(uint8_t key[]) {
@@ -72,7 +72,7 @@ void PlatformNode::enterBindMode(void) {
         125000, // 125kHz bandwidth
         6, // low spreading factor, we do not need high RX sensitivity
         5, // same for coding rate
-        868000000 //Fixed frequency while binding
+        433000000 //Fixed frequency while binding
     );
     bindModeExitMillis = millis() + 1000; //This happens only on RX
 }
